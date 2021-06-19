@@ -3,7 +3,7 @@
 
 
 type Query {
-  User: [User!]!
+  users: [User!]!
 }
 
 type User {

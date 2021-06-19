@@ -13,7 +13,7 @@ const User = objectType({
 
 const UserQueries = queryType({
   definition(t) {
-    t.nonNull.list.nonNull.field("User", {
+    t.nonNull.list.nonNull.field("users", {
       type: User,
       resolve: async (source, args, context: Context) => {
         const users = await context.prisma.user.findMany()

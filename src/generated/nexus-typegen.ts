@@ -47,7 +47,7 @@ export type NexusGenAllTypes = NexusGenRootTypes & NexusGenScalars
 
 export interface NexusGenFieldTypes {
   Query: { // field return type
-    User: NexusGenRootTypes['User'][]; // [User!]!
+    users: NexusGenRootTypes['User'][]; // [User!]!
   }
   User: { // field return type
     id: string; // ID!
@@ -57,7 +57,7 @@ export interface NexusGenFieldTypes {
 
 export interface NexusGenFieldTypeNames {
   Query: { // field return type name
-    User: 'User'
+    users: 'User'
   }
   User: { // field return type name
     id: 'ID'
