@@ -12,6 +12,12 @@ const SVGInternal = styled("svg", {
   width: "$icon_medium",
   height: "$icon_medium",
   variants: {
+    Stroke: {
+      bold: {
+        stroke: "$primary",
+        strokeWidth: "1rem",
+      },
+    },
     Size: {
       smallExtra: {
         width: "$icon_smallExtra",

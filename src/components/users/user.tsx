@@ -2,7 +2,7 @@ import { useLoadAllUsersQuery } from "generated/graphql"
 import { ReactElement } from "react"
 import { Pre } from "ui/pre"
 
-export default function Users(): ReactElement {
+export function Users(): ReactElement {
   const { data, status } = useLoadAllUsersQuery()
   return (
     <Pre Type="primary">

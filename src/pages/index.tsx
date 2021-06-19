@@ -1,11 +1,13 @@
 import { ReactElement } from "react"
-import { BalanceScale } from "ui/icons"
+import { TemplateIcon } from "ui/icons"
+import { Users } from "components/users/user"
 
 export default function IndexPage(): ReactElement {
   return (
     <>
       <h1>Hello World</h1>
-      <BalanceScale Spin Size="banner" />
+      <TemplateIcon Spin Size="banner" Stroke="bold" />
+      <Users />
     </>
   )
 }
