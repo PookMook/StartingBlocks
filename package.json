@@ -4,7 +4,12 @@
   "description": "boilerplate",
   "main": "index.js",
   "dependencies": {
+    "@prisma/client": "^2.25.0",
+    "apollo-server-micro": "^2.25.1",
+    "graphql": "^15.5.0",
     "next": "^11.0.0",
+    "nexus": "^1.0.0",
+    "nexus-prisma": "^0.28.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2"
   },
