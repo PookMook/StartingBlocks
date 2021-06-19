@@ -7,8 +7,8 @@ import Link from "next/link"
 export default function IndexPage(): ReactElement {
   return (
     <>
-      <h1>Hello World</h1>
-      <TemplateIcon Spin Size="banner" Stroke="bold" />
+      <h1>2nd page</h1>
+      <TemplateIcon Rotate="-270" Size="banner" Stroke="bold" />
       <Users />
       <Link href="/">
         <a>Index (shared state A)</a>

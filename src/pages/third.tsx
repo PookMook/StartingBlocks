@@ -1,7 +1,6 @@
-import { ReactElement } from "react"
+import { ReactElement, useState } from "react"
 import { TemplateIcon } from "ui/icons"
 import { Users } from "components/users/user"
-import { Wrapper } from "components/wrapper"
 import Link from "next/link"
 
 export default function IndexPage(): ReactElement {
@@ -23,4 +22,14 @@ export default function IndexPage(): ReactElement {
   )
 }
 
-IndexPage.extra = Wrapper
+const SoloWrapper = ({ children }: { children: ReactElement }): ReactElement => {
+  const [status, setStatus] = useState<string>("Hello")
+  return (
+    <>
+      <input value={status} onChange={(e) => setStatus(e.target.value)} />
+      {children}
+    </>
+  )
+}
+
+IndexPage.extra = SoloWrapper
