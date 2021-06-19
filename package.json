@@ -5,6 +5,7 @@
   "main": "index.js",
   "dependencies": {
     "@prisma/client": "^2.25.0",
+    "@stitches/react": "^0.2.2",
     "apollo-server-micro": "^2.25.1",
     "graphql": "^15.5.0",
     "next": "^11.0.0",
@@ -48,6 +49,7 @@
     "test": "jest",
     "dev": "next dev -p 4000",
     "start": "next start -p 4000",
+    "build": "next build",
     "lint": "next lint",
     "cypress": "cypress run",
     "generate": "prisma generate",
