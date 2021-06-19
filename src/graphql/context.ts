@@ -1,9 +1,13 @@
+import { PrismaClient } from "@prisma/client"
+
+const prisma = new PrismaClient()
+
 export interface Context {
-  test: string
+  prisma: PrismaClient
 }
 
 export function createContext(): Context {
   return {
-    test: "hello",
+    prisma,
   }
 }

@@ -3,5 +3,13 @@
 
 
 type Query {
-  ping: String
+  User: [User!]!
+}
+
+type User {
+  """Encoded ID exposed to the public."""
+  id: ID!
+
+  """Name of the User"""
+  name: String!
 }

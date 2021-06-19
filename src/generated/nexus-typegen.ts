@@ -29,6 +29,10 @@ export interface NexusGenScalars {
 
 export interface NexusGenObjects {
   Query: {};
+  User: { // root type
+    id: string; // ID!
+    name: string; // String!
+  }
 }
 
 export interface NexusGenInterfaces {
@@ -43,13 +47,21 @@ export type NexusGenAllTypes = NexusGenRootTypes & NexusGenScalars
 
 export interface NexusGenFieldTypes {
   Query: { // field return type
-    ping: string | null; // String
+    User: NexusGenRootTypes['User'][]; // [User!]!
+  }
+  User: { // field return type
+    id: string; // ID!
+    name: string; // String!
   }
 }
 
 export interface NexusGenFieldTypeNames {
   Query: { // field return type name
-    ping: 'String'
+    User: 'User'
+  }
+  User: { // field return type name
+    id: 'ID'
+    name: 'String'
   }
 }
 
