@@ -21,4 +21,5 @@ module.exports = {
       'src/utils',
       __dirname,
     ],
+    testEnvironment: "jsdom"
 }
