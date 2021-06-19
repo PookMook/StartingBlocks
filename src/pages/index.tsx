@@ -1,14 +1,11 @@
 import { ReactElement } from "react"
-import { ToggleBox } from "components/toggleBox"
-import Users from "components/users/user"
-import { IDS } from "data/ids"
+import { BalanceScale } from "ui/icons"
 
 export default function IndexPage(): ReactElement {
   return (
     <>
       <h1>Hello World</h1>
-      <Users />
-      <ToggleBox id={IDS.toggleBoxHomePage} />
+      <BalanceScale Spin Size="banner" />
     </>
   )
 }

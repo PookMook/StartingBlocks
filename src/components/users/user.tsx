@@ -1,16 +1,11 @@
 import { useLoadAllUsersQuery } from "generated/graphql"
 import { ReactElement } from "react"
-import { styled } from "ui/stitches.config"
-
-const Pre = styled("pre", {
-  color: "$primary",
-  fontSize: "$smallExtra",
-})
+import { Pre } from "ui/pre"
 
 export default function Users(): ReactElement {
   const { data, status } = useLoadAllUsersQuery()
   return (
-    <Pre>
+    <Pre Type="primary">
       {status}: {JSON.stringify(data?.users, null, 1)}
     </Pre>
   )
