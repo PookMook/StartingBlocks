@@ -50,13 +50,16 @@
     "test": "jest",
     "dev": "next dev -p 4000",
     "start": "next start -p 4000",
-    "build": "npm run generate && next build",
+    "build": "next build",
     "lint": "next lint",
     "cypress": "cypress run",
     "generate": "prisma generate",
     "migrate:add": "prisma migrate dev --name",
     "migrate": "prisma db push",
-    "graphql:codegen": "graphql-codegen --config codegen.yml"
+    "graphql:codegen": "graphql-codegen --config codegen.yml",
+    "vercel-build": "prisma migrate deploy && next build",
+    "prisma:generate": "prisma generate",
+    "postinstall": "prisma generate"
   },
   "repository": {
     "type": "git",
