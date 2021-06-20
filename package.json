@@ -4,7 +4,7 @@
   "description": "boilerplate",
   "main": "index.js",
   "dependencies": {
-    "@prisma/client": "^2.24.1",
+    "@prisma/client": "^2.18.0",
     "@stitches/core": "^0.2.2",
     "@stitches/react": "^0.2.2",
     "apollo-server-micro": "^2.25.1",
