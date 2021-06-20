@@ -57,7 +57,7 @@
     "migrate:add": "prisma migrate dev --name",
     "migrate": "prisma db push",
     "graphql:codegen": "graphql-codegen --config codegen.yml",
-    "vercel-build": "prisma migrate deploy && next build",
+    "vercel-build": "npm run generate && next build",
     "postinstall": "npm run generate",
     "prestart": "npm run generate"
   },
