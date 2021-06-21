@@ -4,66 +4,30 @@
   "description": "boilerplate",
   "main": "index.js",
   "dependencies": {
-    "@prisma/client": "^2.19.0",
-    "@stitches/core": "^0.2.2",
-    "@stitches/react": "^0.2.2",
+    "@prisma/client": "^2.25.0",
     "apollo-server-micro": "^2.25.1",
     "graphql": "^15.5.0",
     "next": "^11.0.0",
     "nexus": "^1.0.0",
     "nexus-prisma": "^0.28.0",
     "react": "^17.0.2",
-    "react-dom": "^17.0.2",
-    "react-query": "^3.17.2"
+    "react-dom": "^17.0.2"
   },
   "devDependencies": {
-    "@graphql-codegen/cli": "^1.21.5",
-    "@graphql-codegen/introspection": "^1.18.2",
-    "@graphql-codegen/typescript": "^1.22.1",
-    "@graphql-codegen/typescript-operations": "^1.18.0",
-    "@graphql-codegen/typescript-react-query": "^1.3.1",
-    "@testing-library/jest-dom": "^5.14.1",
-    "@testing-library/react": "^11.2.7",
-    "@types/jest": "^26.0.23",
     "@types/node": "^15.12.4",
     "@types/react": "^17.0.11",
-    "@typescript-eslint/eslint-plugin": "^4.27.0",
-    "@typescript-eslint/parser": "^4.27.0",
-    "babel-jest": "^27.0.2",
-    "cypress": "^7.5.0",
-    "eslint": "^7.29.0",
-    "eslint-config-next": "^11.0.0",
-    "eslint-config-prettier": "^8.3.0",
-    "eslint-plugin-jsx-a11y": "^6.4.1",
-    "eslint-plugin-prettier": "^3.4.0",
-    "eslint-plugin-react": "^7.24.0",
-    "eslint-plugin-react-hooks": "^4.2.0",
-    "jest": "^27.0.4",
-    "jest-watch-typeahead": "^0.6.4",
-    "prettier": "^2.3.1",
-    "prisma": "^2.19.0",
+    "prisma": "^2.25.0",
     "ts-node": "^10.0.0",
-    "ts-node-dev": "^1.1.6",
     "typescript": "^4.3.4"
   },
   "scripts": {
-    "test": "jest",
     "dev": "next dev -p 4000",
-    "start": "next start -p 4000",
-    "build": "next build",
-    "lint": "next lint",
-    "cypress": "cypress run",
     "generate": "prisma generate",
-    "migrate:add": "prisma migrate dev --name",
-    "migrate": "prisma db push",
-    "graphql:codegen": "graphql-codegen --config codegen.yml",
-    "vercel-build": "npm run generate && next build",
-    "postinstall": "npm run generate",
-    "prestart": "npm run generate"
+    "vercel-build": "npm run generate && next build"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/PookMook/strating-blocks.git"
+    "url": "git+https://github.com/PookMook/starting-blocks.git"
   },
   "keywords": [
     "boilerplate"
@@ -71,7 +35,7 @@
   "author": "Arthur Juchereau",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/PookMook/strating-blocks/issues"
+    "url": "https://github.com/PookMook/starting-blocks/issues"
   },
-  "homepage": "https://github.com/PookMook/strating-blocks#readme"
+  "homepage": "https://github.com/PookMook/starting-blocks#readme"
 }

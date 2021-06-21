@@ -1,26 +1,23 @@
-import { ReactElement } from "react"
-import { TemplateIcon } from "ui/icons"
-import { Users } from "components/users/user"
-import { Wrapper } from "components/wrapper"
-import Link from "next/link"
+import { ReactElement, useEffect, useState } from "react"
 
 export default function IndexPage(): ReactElement {
+
+  const [response, setResponse] = useState<string|null>(null)
+
+  useEffect(()=>{
+    fetch('/api/graphql',{
+      method: 'POST',
+      body: JSON.stringify({query:`query{users{id name}}`})
+    })
+    .then(res => res.text())
+    .then(text => setResponse(text))
+    .catch((e)=> setResponse('error'+e))
+  },[])
+
   return (
     <>
       <h1>Hello World</h1>
-      <TemplateIcon Spin Size="banner" Stroke="bold" />
-      <Users />
-      <Link href="/">
-        <a>Index (shared state A)</a>
-      </Link>
-      <Link href="/second">
-        <a>Second (shared state A)</a>
-      </Link>
-      <Link href="/third">
-        <a>third (shared State B)</a>
-      </Link>
+      {response && <pre>{response}</pre>}
     </>
   )
 }
-
-IndexPage.extra = Wrapper
