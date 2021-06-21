@@ -1,4 +1,4 @@
-# strating-blocks
+# starting-blocks
 Boiler plate for your side project
 
 ## See the live stream of the creation
