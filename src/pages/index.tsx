@@ -12,15 +12,15 @@ export default function IndexPage(): ReactElement {
       body: JSON.stringify({query:`query{users{id name}}`})
     })
     .then(res => res.text())
-    .then(text => setResponseGQL(text))
-    .catch((e)=> setResponseGQL('error'+e))
+    .then(text => setResponseGQL('GQL'+ text))
+    .catch((e)=> setResponseGQL('error'+e.toString()))
   },[])
 
   useEffect(()=>{
     fetch('/api/prisma')
     .then(res => res.text())
-    .then(text => setResponse(text))
-    .catch((e)=> setResponse('error'+e))
+    .then(text => setResponse('API: '+ text))
+    .catch((e)=> setResponse('error'+e.toString()))
   },[])
 
   return (
