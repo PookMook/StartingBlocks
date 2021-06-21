@@ -27,6 +27,7 @@ export default function IndexPage(): ReactElement {
     <>
       <h1>Hello World</h1>
       {response && <pre>{response}</pre>}
+      {responseGQL && <pre>{responseGQL}</pre>}
     </>
   )
 }
