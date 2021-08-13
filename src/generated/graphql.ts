@@ -8,6 +8,8 @@ function fetcher<TData, TVariables>(query: string, variables?: TVariables) {
   return async (): Promise<TData> => {
     const res = await fetch("/api/graphql" as string, {
       method: "POST",
+      credentials: "include",
+      headers: {"content-type":"application/json"},
       body: JSON.stringify({ query, variables }),
     });
     
@@ -38,22 +40,16 @@ export type Query = {
 
 export type User = {
   __typename?: 'User';
-  /** Encoded ID exposed to the public. */
+  /** ID of the user */
   id: Scalars['ID'];
-  /** Name of the User */
+  /** Name of the user */
   name: Scalars['String'];
 };
 
 export type LoadAllUsersQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-export type LoadAllUsersQuery = (
-  { __typename?: 'Query' }
-  & { users: Array<(
-    { __typename?: 'User' }
-    & Pick<User, 'name'>
-  )> }
-);
+export type LoadAllUsersQuery = { __typename?: 'Query', users: Array<{ __typename?: 'User', name: string }> };
 
 
 export const LoadAllUsersDocument = `

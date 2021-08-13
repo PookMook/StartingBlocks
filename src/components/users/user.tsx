@@ -6,8 +6,9 @@ export function Users(): ReactElement {
   const { data, status, refetch } = useLoadAllUsersQuery(undefined, { enabled: false })
 
   useEffect(() => {
-    setTimeout(() => refetch(), 3000)
-  }, [])
+    const interval = setTimeout(() => refetch(), 3000)
+    return () => clearTimeout(interval)
+  }, [refetch])
 
   if (status === "idle") {
     return <p>Waiting 3 seconds before fetching data</p>

@@ -18,6 +18,7 @@
     "isolatedModules": true,
     "jsx": "preserve",
     "baseUrl": "./src",
+    "types": ["node"],
     "paths": {
       "testing": ["./utils/testing"]
     }

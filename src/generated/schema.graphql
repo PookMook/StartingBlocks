@@ -7,9 +7,9 @@ type Query {
 }
 
 type User {
-  """Encoded ID exposed to the public."""
+  """ID of the user"""
   id: ID!
 
-  """Name of the User"""
+  """Name of the user"""
   name: String!
 }

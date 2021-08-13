@@ -48,7 +48,7 @@
         "fields": [
           {
             "name": "id",
-            "description": "Encoded ID exposed to the public.",
+            "description": "ID of the user",
             "args": [],
             "type": {
               "kind": "NON_NULL",
@@ -64,7 +64,7 @@
           },
           {
             "name": "name",
-            "description": "Name of the User",
+            "description": "Name of the user",
             "args": [],
             "type": {
               "kind": "NON_NULL",

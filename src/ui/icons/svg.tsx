@@ -1,7 +1,7 @@
 import { keyframes, styled } from "ui/stitches.config"
-import { StitchesVariants } from "@stitches/core"
 import { ComponentProps, ReactElement } from "react"
 import { squaredViewport } from "helpers/squaredViewport"
+import { VariantProps } from "@stitches/react"
 
 const Spin = keyframes({
   "0%": { transform: "rotate(0)" },
@@ -72,7 +72,7 @@ const SVGInternal = styled("svg", {
   },
 })
 
-export type props = ComponentProps<typeof SVGInternal> & StitchesVariants<typeof SVGInternal>
+export type props = ComponentProps<typeof SVGInternal> & VariantProps<typeof SVGInternal>
 
 export function SVG(props: props): ReactElement {
   const newViewbox = squaredViewport(props.viewBox)

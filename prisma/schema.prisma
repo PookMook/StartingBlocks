@@ -7,10 +7,6 @@ generator client {
     provider = "prisma-client-js"
 }
 
-generator nexusPrisma {
-    provider = "nexus-prisma"
-}
-
 model User {
     /// Encoded ID exposed to the public.
     id String@default(cuid()) @id

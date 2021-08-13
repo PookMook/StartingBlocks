@@ -14,7 +14,7 @@ module.exports = {
         '!.prettierrc.js',
         './src/generated/*'
     ],
-    extends: ['eslint:recommended'],
+    extends: ['eslint:recommended', 'next'],
     overrides: [
         {
             files: ['**/*ts', '**/*.tsx'],

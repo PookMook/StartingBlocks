@@ -1,13 +1,12 @@
-import { User as UserModel } from "nexus-prisma"
 import { objectType, queryType } from "nexus"
 
 import { Context } from "graphql/context"
 
 const User = objectType({
-  name: UserModel.$name,
+  name: "User",
   definition(t) {
-    t.field(UserModel.id.name, UserModel.id)
-    t.field(UserModel.name.name, UserModel.name)
+    t.nonNull.field("id", { type: "ID", description: "ID of the user" })
+    t.nonNull.field("name", { type: "String", description: "Name of the user" })
   },
 })
 

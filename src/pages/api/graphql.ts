@@ -5,7 +5,6 @@ import { createContext } from "graphql/context"
 const Server = new ApolloServer({
   context: createContext,
   schema,
-  tracing: process.env.NODE_ENV === "development",
 })
 
 export const config = {
@@ -13,6 +12,8 @@ export const config = {
     bodyParser: false,
   },
 }
+
+await Server.start()
 
 export default Server.createHandler({
   path: "/api/graphql",

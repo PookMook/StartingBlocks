@@ -10,5 +10,9 @@ generates:
     config:
       fetcher:
         endpoint: '"/api/graphql"'
+        fetchParams:
+          credentials: 'include'
+          headers:
+            content-type: application/json
   ./graphql.schema.json:
     - "introspection"
