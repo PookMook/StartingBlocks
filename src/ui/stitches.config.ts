@@ -1,8 +1,11 @@
 import { createStitches } from "@stitches/react"
+import { violet, violetDark, slate, slateDark } from "@radix-ui/colors"
 
-export const { styled, getCssText, keyframes } = createStitches({
+export const { styled, getCssText, keyframes, createTheme } = createStitches({
   theme: {
     colors: {
+      ...violet,
+      ...slate,
       primary: "blue",
     },
     fontSizes: {
@@ -21,5 +24,12 @@ export const { styled, getCssText, keyframes } = createStitches({
       icon_largeExtra: "$fontSizes$largeExtra",
       icon_banner: "$fontSizes$banner",
     },
+  },
+})
+
+export const darkTheme = createTheme({
+  colors: {
+    ...violetDark,
+    ...slateDark,
   },
 })
