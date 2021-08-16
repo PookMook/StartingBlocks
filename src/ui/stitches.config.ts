@@ -29,7 +29,7 @@ import {
   scale13: blackest Contrast
 */
 
-export const { styled, getCssText, keyframes, createTheme } = createStitches({
+export const { styled, getCssText, keyframes, createTheme, globalCss } = createStitches({
   theme: {
     colors: {
       ...violet,
@@ -90,6 +90,14 @@ export const { styled, getCssText, keyframes, createTheme } = createStitches({
       icon_banner: "$fontSizes$banner",
     },
   },
+  media: {
+    phone: "(max-width: 519px)",
+    tablet: "(min-width: 520px) AND (max-width: 799px)",
+    desktop: "(min-width: 800px)",
+    print: "print",
+    withMotion: "(prefers-reduced-motion)",
+    darkTheme: "(prefers-color-scheme: dark)",
+  },
 })
 
 export const darkTheme = createTheme({
@@ -99,5 +107,35 @@ export const darkTheme = createTheme({
     ...tomatoDark,
     ...redDark,
     ...purpleDark,
+  },
+})
+
+const createThemeCssText = (theme: typeof darkTheme): Record<string, string> => {
+  const tokens: Record<string, string> = {}
+  if (theme.colors) {
+    for (const token of Object.values(theme.colors)) {
+      tokens[token.variable] = token.value
+    }
+  }
+  return tokens
+}
+
+export const globalStyles = globalCss({
+  ":root": {
+    "@darkTheme": {
+      ...createThemeCssText(darkTheme),
+    },
+  },
+  "html,body": {
+    margin: 0,
+    padding: 0,
+    backgroundColor: "$appBackground",
+  },
+  body: {
+    overflowY: "scroll",
+  },
+  "*": {
+    boxSizing: "border-box",
+    position: "relative",
   },
 })
