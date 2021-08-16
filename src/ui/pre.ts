@@ -1,21 +1,16 @@
-import { styled } from "./stitches.config"
+import { styled, theme } from "./stitches.config"
 
 export const Pre = styled("pre", {
   variants: {
     Type: {
       primary: {
-        fontSize: "$banner",
-        color: "$primary",
-      },
-    },
-    Color: {
-      primary: {
-        color: "$primary",
+        fontSize: theme.fontSizes.plus1,
+        color: theme.colors.highContrastColored,
       },
     },
     Size: {
       smallExtra: {
-        fontSize: "$smallExtra",
+        fontSize: theme.fontSizes.minus2,
       },
     },
   },
