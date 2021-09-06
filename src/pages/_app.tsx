@@ -5,7 +5,7 @@ import { globalStyles } from "ui/stitches.config"
 
 const queryClient = new QueryClient()
 
-export default function App({ Component, pageProps }: AppProps): ReactElement {
+export default function App({ Component, pageProps: { ...pageProps } }: AppProps): ReactElement {
   globalStyles()
   return (
     <QueryClientProvider client={queryClient}>

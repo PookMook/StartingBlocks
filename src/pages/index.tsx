@@ -1,6 +1,7 @@
 import { ReactElement } from "react"
 import { TemplateIcon } from "ui/icons"
 import { Users } from "components/users/user"
+
 export default function IndexPage(): ReactElement {
   return (
     <>

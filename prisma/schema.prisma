@@ -5,11 +5,23 @@ datasource db {
 
 generator client {
     provider = "prisma-client-js"
+    previewFeatures = ["referentialActions"]
 }
 
-model User {
-    /// Encoded ID exposed to the public.
-    id String@default(cuid()) @id
-    /// Name of the User
-    name String
+
+model Credentials {
+  id           String   @id @default(cuid())
+  email        String   @unique
+  password     String
+  accountId    String
+  emailVerified DateTime?
+  account Account @relation(fields: [accountId], references: [id], onDelete: Cascade)
+}
+
+model Account {
+  id            String    @id @default(cuid())
+  name          String?
+  email         String   @unique
+  active        DateTime?
+  credentials   Credentials[]
 }
